@@ -3,10 +3,10 @@ VERSION=`cat VERSION`
 IMAGE=amiga-gcc-builder
 
 # download compiler, assembler and linker
-if [ ! -f "m68k-amigaos_linux_i386.tar.gz" ]
+if [ ! -f "amiga-gcc" ]
 then
   echo Downloading GCC binary distribution
-  curl https://amiga-docker-build.s3.eu-central-1.amazonaws.com/m68k-amigaos_linux_i386.tar.gz -o m68k-amigaos_linux_i386.tar.gz
+  git clone https://franke.ms/git/bebbo/amiga-gcc.git
 fi
 if [ ! -f "vasm.tar.gz" ]
 then
