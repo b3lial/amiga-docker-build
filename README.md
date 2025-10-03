@@ -49,3 +49,9 @@ docker run --name=$SERVICE_NAME \
     --env BUILD_RESULT=demo-1-gcc \
     $IMAGE:latest
 ```
+
+## Notes
+
+https://github.com/apple/container/blob/main/docs/tutorial.md
+https://franke.ms/git/bebbo/amiga-gcc
+https://www.amiga-news.de/de/forum/thread.php?id=36574

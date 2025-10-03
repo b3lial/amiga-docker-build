@@ -1,11 +1,13 @@
-#!/bin/sh
+#!/bin/bash
+set -e
+
 VERSION=`cat VERSION`          
 IMAGE=amiga-gcc-builder
 
 # download compiler, assembler and linker
-if [ ! -f "amiga-gcc" ]
+if [ ! -d "amiga-gcc" ]
 then
-  echo Downloading GCC binary distribution
+  echo Downloading GCC distribution
   git clone https://franke.ms/git/bebbo/amiga-gcc.git
 fi
 if [ ! -f "vasm.tar.gz" ]
@@ -20,5 +22,5 @@ then
 fi
 
 echo "creating $IMAGE, version: $VERSION"
-docker build -t $IMAGE:latest .
-docker tag $IMAGE:latest $IMAGE:$VERSION
+container build --platform linux/amd64 --tag $IMAGE:latest --file Dockerfile .
+container images tag $IMAGE:latest $IMAGE:$VERSION
