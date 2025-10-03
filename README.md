@@ -62,6 +62,6 @@ via the corresponding git tag.
 
 ## References
 
-https://github.com/apple/container/blob/main/docs/tutorial.md
-https://franke.ms/git/bebbo/amiga-gcc
-https://www.amiga-news.de/de/forum/thread.php?id=36574
+- https://github.com/apple/container/blob/main/docs/tutorial.md
+- https://franke.ms/git/bebbo/amiga-gcc
+- https://www.amiga-news.de/de/forum/thread.php?id=36574
