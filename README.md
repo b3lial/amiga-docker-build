@@ -1,13 +1,16 @@
 # Amiga Docker Build Container
 
-This container compiles your amiga C and vasm source code.
+This container compiles your amiga C and vasm source code. I am using it on systems like MacOS where its more difficult
+to set up a native Amiga compiler chain. It mounts the source code directory, invokes `make` and returns the 
+compiled binary.
 
 ## Prerequisites
 
 1. Your source code is build with a _Makefile_
     * If it does not use `make`, you have to edit [entrypoint.sh](entrypoint.sh) and add your build steps
-2. Execute `docker-build.sh` which will
-    * Download vasm sources and gcc binary distribution
+2. Execute `docker-build.sh` (or `container-build.sh` if you are using the native MacOS CLI) which will
+    * Download vasm sources and gcc distribution
+    * Compile gcc and its libraries
     * create the container image
 
 ## Usage
@@ -49,3 +52,16 @@ docker run --name=$SERVICE_NAME \
     --env BUILD_RESULT=demo-1-gcc \
     $IMAGE:latest
 ```
+
+## Legacy Version
+
+This is version 2.0 which is based on Ubuntu 22.04 and a source code distribution of GCC 13.
+It replaces version 1.2 which uses an older 32 bit binary distribution of GCC. Nevertheless
+due to its binary nature, the version 1.2 container builds faster and is still available
+via the corresponding git tag. 
+
+## References
+
+https://github.com/apple/container/blob/main/docs/tutorial.md
+https://franke.ms/git/bebbo/amiga-gcc
+https://www.amiga-news.de/de/forum/thread.php?id=36574

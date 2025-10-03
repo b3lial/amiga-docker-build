@@ -22,5 +22,5 @@ then
 fi
 
 echo "creating $IMAGE, version: $VERSION"
-docker build -t $IMAGE:latest .
-docker tag $IMAGE:latest $IMAGE:$VERSION
+container build --platform linux/amd64 --tag $IMAGE:latest --file Dockerfile .
+container images tag $IMAGE:latest $IMAGE:$VERSION
