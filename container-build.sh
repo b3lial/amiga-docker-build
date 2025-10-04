@@ -2,7 +2,7 @@
 set -e
 
 VERSION=`cat VERSION`          
-IMAGE=amiga-gcc-builder
+IMAGE=amiga-gcc-builder-arm
 
 # download compiler, assembler and linker
 if [ ! -d "amiga-gcc" ]
@@ -25,5 +25,5 @@ echo "creating $IMAGE, version: $VERSION"
 container builder stop
 container builder delete
 container builder start --cpus 8 --memory 24g
-container build --platform linux/amd64 --tag $IMAGE:latest --file Dockerfile .
+container build --tag $IMAGE:latest --file Dockerfile .
 container images tag $IMAGE:latest $IMAGE:$VERSION

@@ -68,8 +68,8 @@ docker run --name=$SERVICE_NAME \
 
 ## Legacy Version
 
-This is version 2.0 which is based on Ubuntu 22.04 and a source code distribution of GCC.
-It replaces version 1.2 which uses an older 32 bit binary distribution of GCC. Nevertheless
+This is version 2.x which is based on Ubuntu 22.04 and a source code distribution of GCC.
+It replaces version 1.x which uses an older 32 bit binary distribution of GCC. Nevertheless
 due to its binary nature, the version 1.2 container builds faster and is still available
 via the corresponding git tag. 
 
