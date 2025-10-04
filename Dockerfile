@@ -15,8 +15,8 @@ RUN apt update && \
     rm -rf /var/lib/apt/lists/*
 
 RUN cd /opt && tar zxf /tmp/vasm.tar.gz && tar xfz /tmp/vlink.tar.gz \
-    && cd /tmp/amiga-gcc && mkdir /opt/amiga && make clean \
-    && make drop-prefix && make branch branch=amiga13.1 mod=gcc && make all -j8
+    && cd /tmp/amiga-gcc && mkdir /opt/amiga && make update \
+    && make all -j8
 
 RUN cd /usr/bin && ln -s /opt/amiga/bin/m68k* . \
     && cd /opt/vasm && make CPU=m68k SYNTAX=mot \

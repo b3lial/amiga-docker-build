@@ -4,6 +4,19 @@ This container compiles your amiga C and vasm source code. I am using it on syst
 to set up a native Amiga compiler chain. It mounts the source code directory, invokes `make` and returns the 
 compiled binary.
 
+# Tweaks
+
+The GCC source code distribution by `bebbo` allows you to use different GCC versions. The default version is 6.5.
+But there is also support for:
+
+* 13.1
+* 13.3
+* 15.2
+
+I tried them on MacOS but ran into compiler issues (maybe due to its more exotic nature). However, if you want to
+give them a try add something like `make branch branch=amiga13.1 mod=gcc` to the docker file before invoking
+`make all`.
+
 ## Prerequisites
 
 1. Your source code is build with a _Makefile_
@@ -55,7 +68,7 @@ docker run --name=$SERVICE_NAME \
 
 ## Legacy Version
 
-This is version 2.0 which is based on Ubuntu 22.04 and a source code distribution of GCC 13.
+This is version 2.0 which is based on Ubuntu 22.04 and a source code distribution of GCC.
 It replaces version 1.2 which uses an older 32 bit binary distribution of GCC. Nevertheless
 due to its binary nature, the version 1.2 container builds faster and is still available
 via the corresponding git tag. 

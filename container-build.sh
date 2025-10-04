@@ -22,5 +22,8 @@ then
 fi
 
 echo "creating $IMAGE, version: $VERSION"
+container builder stop
+container builder delete
+container builder start --cpus 8 --memory 24g
 container build --platform linux/amd64 --tag $IMAGE:latest --file Dockerfile .
 container images tag $IMAGE:latest $IMAGE:$VERSION
