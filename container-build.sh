@@ -2,7 +2,7 @@
 set -e
 
 VERSION=`cat VERSION`          
-IMAGE=amiga-gcc-builder-arm
+IMAGE=amiga-gcc-builder
 
 # download compiler, assembler and linker
 if [ ! -d "amiga-gcc" ]
